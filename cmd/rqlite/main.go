@@ -22,6 +22,8 @@ type argT struct {
 	Port     uint16 `cli:"p,port" usage:"rqlited host port" dft:"4001"`
 	Prefix   string `cli:"P,prefix" usage:"rqlited HTTP URL prefix" dft:"/"`
 	Insecure bool   `cli:"i,insecure" usage:"do not verify rqlited HTTPS certificate" dft:"false"`
+	// See Certificates or GetClientCertificate in in https://golang.org/pkg/crypto/tls/#Config
+	ClientCert  string `cli:"client-cert" usage:"Path to client X.509 certificate" dft:"nill"`
 }
 
 const cliHelp = `.help				Show this message
